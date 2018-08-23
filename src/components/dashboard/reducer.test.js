@@ -23,9 +23,9 @@ describe('categories reducers', () => {
   });
 
   it('adds a category', () => {
-    const category1 = { category: 'rent' };
-    const category2 = { category: 'groceries' };
-    const category3 = { category: 'bars' };
+    const category1 = { name: 'rent' };
+    const category2 = { name: 'groceries' };
+    const category3 = { name: 'bars' };
 
     const state = categories([category1, category2], {
       type: CATEGORY_ADD,
