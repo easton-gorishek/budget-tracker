@@ -1,5 +1,4 @@
 import { load, add, update } from './actions';
-import shortid from 'shortid';
 import data from '../../services/categories-data';
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE } from './reducers';
 
@@ -22,9 +21,14 @@ describe('Budget actions', () => {
   });
 
   it('Updates a category', () => {
-    const action = update({
+    const category = {
+      id: 'abc',
+      name: 'bar',
+      budget: 100
+    };
+    const action = update(category);
+    expect(action).toEqual({ type: CATEGORY_UPDATE, payload: category });
 
-    })
   });
 
 });
