@@ -1,7 +1,8 @@
 import {
   categories,
   CATEGORY_LOAD,
-  CATEGORY_ADD
+  CATEGORY_ADD,
+  CATEGORY_UPDATE
 } from './reducers';
 
 describe('categories reducers', () => {
@@ -35,4 +36,22 @@ describe('categories reducers', () => {
     expect(state).toEqual([category1, category2, category3]);
   });
 
+  it('update a category', () => {
+    const category1 = { id: '1', name: 'a' };
+    const category2 = { id: '2', name: 'b' };
+    const category3 = { id: '3', name: 'c' };
+
+    const updated = { id: '3', name: 'coffee' };
+
+    const state = categories([category1, category2, category3], {
+      type: CATEGORY_UPDATE,
+      payload: updated
+    });
+
+    expect(state).toEqual([
+      category1,
+      category2,
+      updated
+    ]);
+  });
 });

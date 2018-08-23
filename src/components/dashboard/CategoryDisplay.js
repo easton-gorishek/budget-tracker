@@ -12,8 +12,10 @@ class CategoryDisplay extends Component {
 
     return (
       <Fragment>
-        <p><strong>Category:</strong><br/>{category.name}</p>
-        <p><strong>Budget:</strong><br/> {category.budget}</p>
+        <p>
+          <strong>Category:</strong> {category.name}<br/>
+          <strong>Budget:</strong> {category.budget}
+        </p>
       </Fragment>
     );
   }
