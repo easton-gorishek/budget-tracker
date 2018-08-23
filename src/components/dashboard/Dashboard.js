@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import categories from '../../services/categories-data';
 import Categories from './Categories';
 import CategoryForm from './CategoryForm';
 import { load, add } from './actions';
@@ -10,6 +9,7 @@ import { load, add } from './actions';
 class Dashboard extends Component {
 
   static propTypes = {
+    categories: PropTypes.array,
     load: PropTypes.func.isRequired,
     add: PropTypes.func.isRequired
   };
@@ -19,7 +19,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { add } = this.props;
+    const { add, categories } = this.props;
 
     return (
       <div>
@@ -30,7 +30,7 @@ class Dashboard extends Component {
 
         {categories &&
           <section>
-            <h3>Budget Categories</h3>
+            <h3>Budget</h3>
             <Categories
               categories={categories}
             />

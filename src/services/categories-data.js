@@ -1,19 +1,21 @@
+import shortid from 'shortid';
+
 export default [
   {
-    id: 'abc',
-    timestamp: 'today',
+    id: shortid.generate(),
+    timestamp: new Date(),
     name: 'rent',
     budget: 1000
   },
   {
-    id: 'def',
-    timestamp: 'today',
+    id: shortid.generate(),
+    timestamp: new Date(),
     name: 'groceries',
     budget: 500
   },
   {
-    id: 'ghi',
-    timestamp: 'today',
+    id: shortid.generate(),
+    timestamp: new Date(),
     name: 'bar',
     budget: 200
   }

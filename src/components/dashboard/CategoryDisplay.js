@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 class CategoryDisplay extends Component {
@@ -11,9 +11,10 @@ class CategoryDisplay extends Component {
     const { category } = this.props;
 
     return (
-      <p>
-        {category.name}
-      </p>
+      <Fragment>
+        <p><strong>Category:</strong><br/>{category.name}</p>
+        <p><strong>Budget:</strong><br/> {category.budget}</p>
+      </Fragment>
     );
   }
 }

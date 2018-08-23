@@ -29,7 +29,7 @@ class CategoryForm extends Component {
     if(id) category.id = id;
 
     this.props.onComplete(category);
-    this.setState({ name: '', budget: '', timestamp: '' })
+    this.setState({ name: '', budget: '', timestamp: '' });
   };
 
   handleChange = ({ target }) => {
@@ -42,11 +42,16 @@ class CategoryForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Category Name:
+          Category:&nbsp;<br/>
           <input name="name" value={name} onChange={this.handleChange}/>
-          <input name="budget" value={budget} onChange={this.handleChange}/>
-          <button type="submit">{id ? 'Update' : 'Add' }</button>
         </label>
+        <br/>
+        <label>
+          Budget:&nbsp;<br/>
+          <input name="budget" value={budget} onChange={this.handleChange}/>
+        </label>
+        <br/>
+        <button type="submit">{id ? 'Update' : 'Add' }</button>
       </form>
     );
   }
