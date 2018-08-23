@@ -40,6 +40,7 @@ class Category extends Component {
           ? <CategoryForm
             category={category}
             onComplete={this.handleComplete}
+            onCancel={this.handleEndEdit}
           />
           : <CategoryDisplay
             category={category}

@@ -12,7 +12,8 @@ class CategoryForm extends Component {
 
   static propTypes = {
     category: PropTypes.object,
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
   };
 
   componentDidMount() {
@@ -38,6 +39,7 @@ class CategoryForm extends Component {
 
   render() {
     const { id, name, budget } = this.state;
+    const { onCancel } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -52,6 +54,7 @@ class CategoryForm extends Component {
         </label>
         <br/>
         <button type="submit">{id ? 'Update' : 'Add' }</button>
+        {id && <button type="button" onClick={onCancel}>Cancel</button>}
       </form>
     );
   }

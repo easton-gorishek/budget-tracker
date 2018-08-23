@@ -5,7 +5,7 @@ class CategoryDisplay extends Component {
   
   static propTypes = {
     category: PropTypes.object.isRequired,
-    onEdit: PropTypes.func.isRequired
+    onEdit: PropTypes.func.isRequired,
   };
 
   render() {
