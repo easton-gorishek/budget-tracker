@@ -1,6 +1,6 @@
-import { load, add, update } from './actions';
+import { load, add, update, remove } from './actions';
 import data from '../../services/categories-data';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE } from './reducers';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
 
 describe('Budget actions', () => {
 
@@ -29,6 +29,16 @@ describe('Budget actions', () => {
     const action = update(category);
     expect(action).toEqual({ type: CATEGORY_UPDATE, payload: category });
 
+  });
+
+  it('Removes a category', () => {
+    const category = {
+      id: 'abc',
+      name: 'bar',
+      budget: 100
+    };
+    const action = remove(category);
+    expect(action).toEqual({ type: CATEGORY_REMOVE, payload: category });
   });
 
 });
