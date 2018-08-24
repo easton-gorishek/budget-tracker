@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CategoryDisplay from './CategoryDisplay';
 import CategoryForm from './CategoryForm';
 import { update } from './actions';
+import styles from './Category.css';
 
 class Category extends Component {
   
@@ -35,7 +36,7 @@ class Category extends Component {
     const { editing } = this.state;
 
     return (
-      <li>
+      <li className={styles.category}>
         {editing
           ? <CategoryForm
             category={category}

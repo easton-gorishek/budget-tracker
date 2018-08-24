@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './CategoryForm.css';
 
 class CategoryForm extends Component {
 
@@ -42,19 +43,19 @@ class CategoryForm extends Component {
     const { onCancel } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles.categoryForm} onSubmit={this.handleSubmit}>
         <label>
           Category:&nbsp;<br/>
-          <input name="name" value={name} onChange={this.handleChange}/>
+          <input required name="name" value={name} onChange={this.handleChange}/>
         </label>
-        <br/>
         <label>
           Budget:&nbsp;<br/>
-          <input name="budget" value={budget} onChange={this.handleChange}/>
+          <input required name="budget" value={budget} onChange={this.handleChange}/>
         </label>
-        <br/>
-        <button type="submit">{id ? 'Update' : 'Add' }</button>
-        {id && <button type="button" onClick={onCancel}>Cancel</button>}
+        <p>
+          <button type="submit">{id ? 'Update' : 'Add' }</button>
+          {id && <button type="button" onClick={onCancel}>Cancel</button>}
+        </p>
       </form>
     );
   }
