@@ -30,7 +30,6 @@ class CategoryForm extends Component {
     const category = { name, budget, timestamp };
     if(id) category.id = id;
 
-    console.log(category);
     this.props.onComplete(category);
     this.setState({ name: '', budget: '', timestamp: '' });
   };

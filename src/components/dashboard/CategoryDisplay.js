@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from './actions';
 import styles from './CategoryDisplay.css';
+import Expenses from '../expenses/Expenses';
 
 class CategoryDisplay extends Component {
   
@@ -25,7 +26,9 @@ class CategoryDisplay extends Component {
           <button name="edit" onClick={onEdit}>Edit</button>
           <button name="delete" onClick={() => remove(category.id)}>Delete</button>
         </p>
+        <Expenses categoryId={category.id}/>
       </Fragment>
+
     );
   }
 }

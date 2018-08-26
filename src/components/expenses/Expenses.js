@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
-import load from '../dashboard/actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux'; 
+import { getExpenses } from './reducers';
 import Expense from './Expense';
 
 class Expenses extends Component {
-  
+
   static propTypes = {
-    load: PropTypes.func.isRequired
+    expenses: PropTypes.array,
+    categoryId: PropTypes.string
   };
 
-  componentDidMount() {
-    this.props.load();
-  }
-
   render() {
-
+    const { expenses } = this.props;
     return (
-      <h1>expenses</h1>
+      <ul>
+        {expenses.map(expense => (
+          <Expense
+            key={expense.id}
+            expense={expense}
+          />
+        ))}
+      </ul>
     );
   }
-
 }
+
+export default connect(
+  (state, { categoryId }) => ({
+    expenses: getExpenses(state, categoryId)
+  }),
+  null
+)(Expenses);
