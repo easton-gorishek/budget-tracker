@@ -9,8 +9,10 @@ class CategoryDisplay extends Component {
   static propTypes = {
     category: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
-    remove: PropTypes.func.isRequired
+    remove: PropTypes.func.isRequired,
+    load: PropTypes.func
   };
+
 
   render() {
     const { category, onEdit, remove } = this.props;
