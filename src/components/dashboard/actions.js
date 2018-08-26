@@ -10,6 +10,7 @@ export const load = () => ({
 export const add = (category) => {
   category.timestamp = new Date();
   category.id = shortid.generate();
+  category.expense = [];
   return {
     type: CATEGORY_ADD,
     payload: category
