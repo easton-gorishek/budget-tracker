@@ -16,8 +16,6 @@ class Expenses extends Component {
 
   render() {
     const { expenses, categoryId, add } = this.props;
-    console.log('EXPENSES!', expenses);
-    console.log('CATEGORY ID', categoryId);
     return (
       <Fragment>
         <ul>
