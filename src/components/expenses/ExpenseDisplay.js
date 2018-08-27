@@ -7,15 +7,17 @@ class ExpenseDisplay extends Component {
 
   static propTypes = {
     expense: PropTypes.object,
-    remove: PropTypes.func
+    remove: PropTypes.func,
+    onEdit: PropTypes.func
   };
 
   render() {
-    const { expense, remove } = this.props;
+    const { expense, remove, onEdit } = this.props;
 
     return (
       <p>
         {expense.name}
+        <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={() => remove(expense)}>Delete</button>
       </p>
     );

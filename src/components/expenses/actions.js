@@ -1,6 +1,6 @@
 import expenses from '../../services/categories-data';
 import shortid from 'shortid';
-import { EXPENSES_LOAD, EXPENSE_ADD, EXPENSE_REMOVE } from './reducers';
+import { EXPENSES_LOAD, EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './reducers';
 
 export const load = () => ({
   type: EXPENSES_LOAD,
@@ -20,3 +20,8 @@ export const add = (expense) => {
     payload: expense
   };
 };
+
+export const update = (expense) => ({
+  type: EXPENSE_UPDATE,
+  payload: expense,
+});
