@@ -12,7 +12,8 @@ class ExpenseForm extends Component {
   static propTypes = {
     expense: PropTypes.object,
     categoryId: PropTypes.string,
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    onCancel: PropTypes.func
   };
 
   componentDidMount() {
@@ -23,8 +24,8 @@ class ExpenseForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { id, categoryId, name, price } = this.state;
-    const expense = { name, price, categoryId };
+    const { id, name, price } = this.state;
+    const expense = { name, price };
     if(id) expense.id = id;
     if(this.props.categoryId) expense.categoryId = this.props.categoryId;
 
@@ -38,6 +39,8 @@ class ExpenseForm extends Component {
 
   render() {
     const { name, price, id } = this.state;
+    const { onCancel } = this.props;
+
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -45,13 +48,14 @@ class ExpenseForm extends Component {
         Expense Name:&nbsp;<br/>
           <input required name="name" value={name} onChange={this.handleChange}/>
         </label>
+        <br/>
         <label>
         Price:&nbsp;<br/>
           <input required name="price" value={price} onChange={this.handleChange}/>
         </label>
         <p>
           <button type="submit">{id ? 'Update' : 'Add' }</button>
-          {/* {id && <button type="button" onClick={onCancel}>Cancel</button>} */}
+          {id && <button type="button" onClick={onCancel}>Cancel</button>}
         </p>
       </form>
     );

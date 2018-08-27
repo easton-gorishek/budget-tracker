@@ -16,7 +16,7 @@ class ExpenseDisplay extends Component {
 
     return (
       <p>
-        {expense.name}
+        {expense.name}&nbsp;- ${expense.price}<br/>
         <button name="edit" onClick={onEdit}>Edit</button>
         <button name="delete" onClick={() => remove(expense)}>Delete</button>
       </p>

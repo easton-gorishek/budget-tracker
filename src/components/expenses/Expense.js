@@ -40,6 +40,7 @@ class Expense extends Component {
           ? <ExpenseForm
             expense={expense}
             onComplete={this.handleComplete}
+            onCancel={this.handleEndEdit}
           />
           : <ExpenseDisplay
             expense={expense}
