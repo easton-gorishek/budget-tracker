@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'; 
-import { getExpenses } from './reducers';
+import { getExpensesByCategoryId } from './reducers';
 import Expense from './Expense';
 import ExpenseForm from './ExpenseForm';
 import { add } from './actions';
@@ -37,7 +37,7 @@ class Expenses extends Component {
 
 export default connect(
   (state, { categoryId }) => ({
-    expenses: getExpenses(state, categoryId)
+    expenses: getExpensesByCategoryId(state, categoryId)
   }),
   { add }
 )(Expenses);

@@ -14,7 +14,6 @@ class CategoryDisplay extends Component {
     load: PropTypes.func
   };
 
-
   render() {
     const { category, onEdit, remove } = this.props;
 
