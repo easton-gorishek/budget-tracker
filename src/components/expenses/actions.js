@@ -1,11 +1,6 @@
-// import expenses from '../../services/categories-data';
-import { addExpense, removeExpense, updateExpense, loadCategories } from '../../services/budgetApi';
-import { EXPENSES_LOAD, EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './reducers';
+import { addExpense, removeExpense, updateExpense } from '../../services/budgetApi';
+import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './reducers';
 
-export const load = () => ({
-  type: EXPENSES_LOAD,
-  payload: loadCategories()
-});
 
 export const remove = (expense) => ({
   type: EXPENSE_REMOVE,
