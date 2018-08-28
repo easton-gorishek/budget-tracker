@@ -6,16 +6,21 @@ const CATEGORIES_URL = `${URL}/categories`;
 const getCategoryUrl = key => `${CATEGORIES_URL}/${key}.json`;
 const getExpenseUrl = key => `${CATEGORIES_URL}/${key}/expenses`;
 
+const pivot = obj => {
+  if(!obj) return [];
+  return Object.keys(obj).map(key => {
+    const each = obj[key];
+    each.id = key;
+    return each;
+  });
+};
+
 export const loadCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
     .then(res => {
-      return res
-        ? Object.keys(res).map(key => {
-          const each = res[key];
-          each.id = key;
-          return each;
-        })
-        : [];
+      const categories = pivot(res);
+      categories.forEach(category => category.expenses = pivot(category.expenses));
+      return categories;
     });
 };
 
