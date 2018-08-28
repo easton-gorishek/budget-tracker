@@ -26,15 +26,15 @@ describe('Expense actions', () => {
     expect(addExpense.mock.calls[0][0]).toBe(expense);
   });
 
-  it.skip('removes a category', () => {
+  it('removes an expense', () => {
     const promise = Promise.resolve();
-    removeCategory.mockReturnValueOnce(promise);
+    removeExpense.mockReturnValueOnce(promise);
     const id = 123;
 
     const { type, payload } = remove(id);
-    expect(type).toBe(CATEGORY_REMOVE);
-    expect(removeCategory.mock.calls.length).toBe(1);
-    expect(removeCategory.mock.calls[0][0]).toBe(id);
+    expect(type).toBe(EXPENSE_REMOVE);
+    expect(removeExpense.mock.calls.length).toBe(1);
+    expect(removeExpense.mock.calls[0][0]).toBe(id);
 
     return payload.then(idToDelete => {
       expect(idToDelete).toBe(id);
