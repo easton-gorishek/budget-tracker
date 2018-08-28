@@ -65,5 +65,4 @@ describe('Budget actions', () => {
     expect(updateCategory.mock.calls[0][0]).toBe(category);
 
   });
-
 });
