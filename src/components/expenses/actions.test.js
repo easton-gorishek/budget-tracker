@@ -41,16 +41,16 @@ describe('Expense actions', () => {
     });
   });
 
-  it.skip('updates a category', () => {
-    const category = { name: 'bar' };
+  it('update an expense', () => {
+    const expense = { name: 'bar' };
     const promise = Promise.resolve();
-    updateCategory.mockReturnValueOnce(promise);
+    updateExpense.mockReturnValueOnce(promise);
 
-    const { type, payload } = update(category);
-    expect(type).toBe(CATEGORY_UPDATE);
+    const { type, payload } = update(expense);
+    expect(type).toBe(EXPENSE_UPDATE);
     expect(payload).toBe(promise);
-    expect(updateCategory.mock.calls.length).toBe(1);
-    expect(updateCategory.mock.calls[0][0]).toBe(category);
+    expect(updateExpense.mock.calls.length).toBe(1);
+    expect(updateExpense.mock.calls[0][0]).toBe(expense);
 
   });
 });
