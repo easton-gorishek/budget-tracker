@@ -5,8 +5,10 @@ class ExpenseForm extends Component {
 
   state = {
     id: null,
+    categoryId: '',
     name: '',
-    price: ''
+    price: '',
+    timestamp: ''
   };
 
   static propTypes = {
@@ -19,13 +21,13 @@ class ExpenseForm extends Component {
   componentDidMount() {
     const { expense } = this.props;
     if(!expense) return;
-    this.setState(expense); 
+    this.setState(expense);
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { id, name, price } = this.state;
-    const expense = { name, price };
+    const { id, name, price, categoryId } = this.state;
+    const expense = { name, price, categoryId };
     if(id) expense.id = id;
     if(this.props.categoryId) expense.categoryId = this.props.categoryId;
 

@@ -6,14 +6,22 @@ import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE } from '../../components/d
 export const getExpenses = (state) => state.expensesByCategory; 
 export const getExpensesByCategoryId = (state, id) => getExpenses(state)[id];
 
+const makeArray = (obj) => {
+  if(!obj) return [];
+  return Object.keys(obj).map(key => {
+    const each = obj[key];
+    each.id = key;
+    return each;
+  });
+};
+
 export function expensesByCategory(state = [], { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
-      return payload
-        ? Object.keys(payload).forEach(key => {
-          payload[key] = payload[key].expenses;
-        })
-        : [];
+      return payload.reduce((map, category) => {
+        map[category.id] = makeArray(category.expenses);
+        return map;
+      }, {});
     case CATEGORY_ADD: {
       return {
         ...state,

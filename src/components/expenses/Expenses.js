@@ -9,9 +9,10 @@ import { add } from './actions';
 class Expenses extends Component {
 
   static propTypes = {
-    expenses: PropTypes.array,
+    expenses: PropTypes.array.isRequired,
     categoryId: PropTypes.string,
-    add: PropTypes.func
+    add: PropTypes.func,
+    load: PropTypes.func
   };
 
   render() {
@@ -39,5 +40,5 @@ export default connect(
   (state, { categoryId }) => ({
     expenses: getExpensesByCategoryId(state, categoryId)
   }),
-  { add }
+  { add } 
 )(Expenses);

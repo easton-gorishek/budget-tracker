@@ -8,11 +8,7 @@ export const getCategories = (state) => state.categories;
 export function categories(state = [], { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
-      return Object.keys(payload).map(key => {
-        const each = payload[key];
-        each.id = key;
-        return each;
-      });
+      return payload;
     case CATEGORY_ADD:
       return [
         ...state,

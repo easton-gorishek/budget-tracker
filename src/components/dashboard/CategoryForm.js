@@ -6,7 +6,6 @@ class CategoryForm extends Component {
 
   state = {
     id: null,
-    timestamp: '',
     name: '',
     budget: ''
   };
@@ -30,7 +29,19 @@ class CategoryForm extends Component {
     const category = { name, budget, timestamp };
     if(id) category.id = id;
 
-    this.props.onComplete(category);
+    const { onComplete, category: originalCategory } = this.props;
+
+    onComplete(category)
+      .then(() => {
+        if(!originalCategory) {
+          this.setState({ name: '', budget: '' });
+          document.activeElement.blur();
+        }
+      })
+      .catch(err => {
+        this.setState({ errors: err });
+      });
+
     this.setState({ name: '', budget: '', timestamp: '' });
   };
 

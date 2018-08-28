@@ -1,6 +1,5 @@
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
 import { loadCategories, addCategory, removeCategory, updateCategory } from '../../services/budgetApi';
-import shortid from 'shortid';
 
 export const load = () => ({
   type: CATEGORY_LOAD,
@@ -9,8 +8,7 @@ export const load = () => ({
 
 export const add = (category) => {
   category.timestamp = new Date();
-  category.id = shortid.generate();
-  category.expenses = ['athing'];
+  category.expenses = [];
   return {
     type: CATEGORY_ADD,
     payload: addCategory(category)

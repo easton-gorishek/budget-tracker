@@ -1,27 +1,26 @@
-import expenses from '../../services/categories-data';
-import shortid from 'shortid';
+// import expenses from '../../services/categories-data';
+import { addExpense, removeExpense, updateExpense, loadCategories } from '../../services/budgetApi';
 import { EXPENSES_LOAD, EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './reducers';
 
 export const load = () => ({
   type: EXPENSES_LOAD,
-  payload: expenses
+  payload: loadCategories()
 });
 
 export const remove = (expense) => ({
   type: EXPENSE_REMOVE,
-  payload: expense
+  payload: removeExpense(expense).then(() => expense)
 });
 
 export const add = (expense) => {
   expense.timestamp = new Date();
-  expense.id = shortid.generate();
   return {
     type: EXPENSE_ADD,
-    payload: expense
+    payload: addExpense(expense)
   };
 };
 
 export const update = (expense) => ({
   type: EXPENSE_UPDATE,
-  payload: expense,
+  payload: updateExpense(expense)
 });
