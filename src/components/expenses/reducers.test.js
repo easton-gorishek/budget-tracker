@@ -14,7 +14,7 @@ describe('expenses reducers', () => {
     expect(state).toEqual([]);
   });
 
-  it.only('loads expenses', () => {
+  it('loads expenses', () => {
     const payload = [
       {
         id: '1',
@@ -44,17 +44,27 @@ describe('expenses reducers', () => {
     expect(state).toEqual(expected);
   });
 
-  it('adds a category', () => {
-    const category1 = { name: 'rent' };
-    const category2 = { name: 'groceries' };
-    const category3 = { name: 'bars' };
+  it.only('adds an expense ', () => {
+    const expense = { 
+      name: 'americano', 
+      price: 3, 
+      categoryId: '1' 
+    };
 
-    const state = categories([category1, category2], {
-      type: CATEGORY_ADD,
-      payload: category3
+    const categories = {
+      '1':[{}]
+    };
+
+    const expected = {
+      '1': [{}, expense] 
+    };
+
+    const state = expensesByCategory(categories, {
+      type: EXPENSE_ADD,
+      payload: expense
     });
 
-    expect(state).toEqual([category1, category2, category3]);
+    expect(state).toEqual(expected);
   });
 
   it('update a category', () => {
