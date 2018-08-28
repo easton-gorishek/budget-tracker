@@ -23,8 +23,8 @@ class Category extends Component {
 
   handleComplete = (category) => {
     const { update } = this.props;
-    update(category);
-    this.handleEndEdit();
+    return update(category)
+      .then(() => this.handleEndEdit());
   };
 
   handleEndEdit = () => {

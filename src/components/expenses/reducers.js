@@ -9,10 +9,11 @@ export const getExpensesByCategoryId = (state, id) => getExpenses(state)[id];
 export function expensesByCategory(state = [], { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
-      return payload.reduce((map, category) => {
-        map[category.id] = category.expenses;
-        return map; 
-      }, {});
+      return payload
+        ? Object.keys(payload).forEach(key => {
+          payload[key] = payload[key].expenses;
+        })
+        : [];
     case CATEGORY_ADD: {
       return {
         ...state,
