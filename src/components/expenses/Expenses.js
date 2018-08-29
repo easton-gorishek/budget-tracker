@@ -5,6 +5,7 @@ import { getExpensesByCategoryId } from './reducers';
 import Expense from './Expense';
 import ExpenseForm from './ExpenseForm';
 import { add } from './actions';
+import styles from './Expenses.css';
 
 class Expenses extends Component {
 
@@ -19,7 +20,7 @@ class Expenses extends Component {
     const { expenses, categoryId, add } = this.props;
     return (
       <Fragment>
-        <ul>
+        <ul className={styles.expenses}>
           {expenses.map(expense => (
             <Expense
               key={expense.id}

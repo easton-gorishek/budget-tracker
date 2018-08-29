@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styles from './CategoryForm.css';
 
@@ -73,8 +73,11 @@ class CategoryForm extends Component {
         <p>
           <button type="submit">{id ? 'Update' : 'Add' }</button>
           {id && 
-          <button type="button" onClick={onCancel}>Cancel</button>}
-          <button name="remove" onClick={this.onRemove}>Delete</button>
+            <Fragment>
+              <button type="button" onClick={onCancel}>Cancel</button>
+              <button name="remove" onClick={this.onRemove}>Delete</button>
+            </Fragment>
+          }
         </p>
       </form>
     );
