@@ -44,7 +44,7 @@ describe('expenses reducers', () => {
     expect(state).toEqual(expected);
   });
 
-  it.only('adds an expense ', () => {
+  it('adds an expense ', () => {
     const expense = { 
       name: 'americano', 
       price: 3, 
@@ -67,38 +67,50 @@ describe('expenses reducers', () => {
     expect(state).toEqual(expected);
   });
 
-  it('update a category', () => {
-    const category1 = { id: '1', name: 'a' };
-    const category2 = { id: '2', name: 'b' };
-    const category3 = { id: '3', name: 'c' };
+  it('update an expense', () => {
+    const updated = {
+      name: 'white mocha',
+      price: 5,
+      categoryId: '1',
+      id: '2'
+    };
 
-    const updated = { id: '3', name: 'coffee' };
+    const categories = {
+      '1': [{ name: 'coffee', price: 3, categoryId: '1', id: '2' }]
+    };
 
-    const state = categories([category1, category2, category3], {
-      type: CATEGORY_UPDATE,
+    const expected = {
+      '1': [update]
+    };
+
+    const state = expensesByCategory(categories, {
+      type: EXPENSE_UPDATE,
       payload: updated
     });
 
-    expect(state).toEqual([
-      category1,
-      category2,
-      updated
-    ]);
+    expect(state).toEqual(expected);
   });
 
-  it('removes a category', () => {
-    const category1 = { id: '1', name: 'a' };
-    const category2 = { id: '2', name: 'b' };
-    const category3 = { id: '3', name: 'c' };
+  it.only('removes an expense', () => {
+    const deleted = {
+      name: 'americano',
+      id: 1,
+      categoryId: '2'
+    };
 
-    const state = categories([category1, category2, category3], {
-      type: CATEGORY_REMOVE,
-      payload: '2'
+    const categories = {
+      '2': [{ id: 2, categoryId: '1' }, deleted]
+    };
+   
+    const expected = {
+      '2': [{ id: 2, categoryId: '1' }]
+    };
+
+    const state = expensesByCategory(categories, {
+      type: EXPENSE_REMOVE,
+      payload: deleted
     });
 
-    expect(state).toEqual([
-      category1,
-      category3
-    ]);
+    expect(state).toEqual(expected);
   });
 });
