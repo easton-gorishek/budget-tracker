@@ -1,32 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`category display renders display, then edit 1`] = `
-<Fragment>
+<div
+  className="categoryDisplay"
+>
+  <button
+    id="categoryEdit"
+    name="edit"
+    onClick={[MockFunction]}
+  >
+    ✎
+  </button>
   <p
-    className="categoryDisplay"
+    id="categoryHeader"
   >
     <strong>
       name
     </strong>
-    <br />
+     | 
     <strong>
       $
       budget
     </strong>
-    <br />
-    <button
-      name="edit"
-      onClick={[MockFunction]}
-    >
-      Edit
-    </button>
-    <button
-      name="remove"
-      onClick={[Function]}
-    >
-      Delete
-    </button>
   </p>
   <Connect(Expenses) />
-</Fragment>
+</div>
 `;
