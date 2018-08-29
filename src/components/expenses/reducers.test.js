@@ -7,7 +7,7 @@ import {
 
 import { CATEGORY_LOAD } from '../dashboard/reducers';
 
-describe('expenses reducers', () => {
+describe.only('expenses reducers', () => {
 
   it('initialize to empty array', () => {
     const state = expensesByCategory(undefined, {});
@@ -16,18 +16,9 @@ describe('expenses reducers', () => {
 
   it('loads expenses', () => {
     const payload = [
-      {
-        id: '1',
-        expenses: [{}]
-      },
-      {
-        id: '2',
-        expenses: [{}]
-      },
-      {
-        id: '3',
-        expenses: [{}]
-      }
+      { id: '1', expenses: [{}] },
+      { id: '2', expenses: [{}] },
+      { id: '3', expenses: [{}] }
     ];
 
     const expected = {
@@ -67,7 +58,7 @@ describe('expenses reducers', () => {
     expect(state).toEqual(expected);
   });
 
-  it('update an expense', () => {
+  it('updates an expense', () => {
     const updated = {
       name: 'white mocha',
       price: 5,
@@ -80,7 +71,7 @@ describe('expenses reducers', () => {
     };
 
     const expected = {
-      '1': [update]
+      '1': [updated]
     };
 
     const state = expensesByCategory(categories, {
@@ -91,7 +82,7 @@ describe('expenses reducers', () => {
     expect(state).toEqual(expected);
   });
 
-  it.only('removes an expense', () => {
+  it('removes an expense', () => {
     const deleted = {
       name: 'americano',
       id: 1,

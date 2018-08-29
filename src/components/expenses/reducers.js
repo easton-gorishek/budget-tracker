@@ -9,6 +9,8 @@ export const getExpensesByCategoryId = (state, id) => getExpenses(state)[id];
 export function expensesByCategory(state = [], { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
+      console.log('STATE', state);
+      console.log('PAYLOAD', payload);
       return payload.reduce((map, category) => {
         map[category.id] = category.expenses;
         return map;
