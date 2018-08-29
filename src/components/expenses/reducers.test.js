@@ -5,7 +5,7 @@ import {
   EXPENSE_REMOVE
 } from './reducers';
 
-import { CATEGORY_LOAD } from '../dashboard/reducers';
+import { CATEGORY_LOAD, CATEGORY_REMOVE } from '../dashboard/reducers';
 
 describe.only('expenses reducers', () => {
 
@@ -103,5 +103,27 @@ describe.only('expenses reducers', () => {
     });
 
     expect(state).toEqual(expected);
+
+  });
+
+  it('removes all expenses if a category is deleted', () => {
+    const removed = '123';
+
+    const categories = {
+      '123': [],
+      '345': []
+    };
+
+    const expected = {
+      '345': []
+    };
+
+    const state = expensesByCategory(categories, {
+      type: CATEGORY_REMOVE,
+      payload: removed
+    });
+
+    expect(state).toEqual(expected);
+
   });
 });
