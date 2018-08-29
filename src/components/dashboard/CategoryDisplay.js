@@ -1,38 +1,30 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { remove } from './actions';
 import styles from './CategoryDisplay.css';
 import Expenses from '../expenses/Expenses';
 
-export class CategoryDisplay extends Component {
+class CategoryDisplay extends Component {
   
   static propTypes = {
     category: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
-    remove: PropTypes.func.isRequired,
-    load: PropTypes.func
   };
 
   render() {
-    const { category, onEdit, remove } = this.props;
+    const { category, onEdit } = this.props;
 
     return (
-      <Fragment>
-        <p className={styles.categoryDisplay}>
+      <div className={styles.categoryDisplay}>
+        <button id="categoryEdit" name="edit" onClick={onEdit}>&#9998;</button>
+        <p>
           <strong>{category.name}</strong><br/>
           <strong>${category.budget}</strong><br/>
-          <button name="edit" onClick={onEdit}>Edit</button>
-          <button name="remove" onClick={() => remove(category.id)}>Delete</button>
         </p>
         <Expenses categoryId={category.id}/>
-      </Fragment>
+      </div>
 
     );
   }
 }
 
-export default connect(
-  null,
-  { remove }
-)(CategoryDisplay);
+export default CategoryDisplay;

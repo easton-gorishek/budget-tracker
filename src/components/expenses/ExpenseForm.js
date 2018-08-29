@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './ExpenseForm.css';
 
 class ExpenseForm extends Component {
 
@@ -45,12 +46,11 @@ class ExpenseForm extends Component {
 
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles.expenseForm} onSubmit={this.handleSubmit}>
         <label>
         Expense Name:&nbsp;<br/>
           <input required name="name" value={name} onChange={this.handleChange}/>
         </label>
-        <br/>
         <label>
         Price:&nbsp;<br/>
           <input required name="price" value={price} onChange={this.handleChange}/>

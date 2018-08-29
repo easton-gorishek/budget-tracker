@@ -13,7 +13,8 @@ class CategoryForm extends Component {
   static propTypes = {
     category: PropTypes.object,
     onComplete: PropTypes.func.isRequired,
-    onCancel: PropTypes.func
+    onCancel: PropTypes.func,
+    remove: PropTypes.func
   };
 
   componentDidMount() {
@@ -49,6 +50,12 @@ class CategoryForm extends Component {
     this.setState({ [target.name]: target.value });
   };
 
+  onRemove = (event) => {
+    event.preventDefault();
+    const { remove, category } = this.props;
+    remove(category.id);
+  };
+
   render() {
     const { id, name, budget } = this.state;
     const { onCancel } = this.props;
@@ -65,7 +72,9 @@ class CategoryForm extends Component {
         </label>
         <p>
           <button type="submit">{id ? 'Update' : 'Add' }</button>
-          {id && <button type="button" onClick={onCancel}>Cancel</button>}
+          {id && 
+          <button type="button" onClick={onCancel}>Cancel</button>}
+          <button name="remove" onClick={this.onRemove}>Delete</button>
         </p>
       </form>
     );

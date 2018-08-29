@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryDisplay from './CategoryDisplay';
 import CategoryForm from './CategoryForm';
-import { update } from './actions';
+import { update, remove } from './actions';
 import styles from './Category.css';
 
 class Category extends Component {
@@ -14,7 +14,8 @@ class Category extends Component {
 
   static propTypes = {
     category: PropTypes.object.isRequired,
-    update: PropTypes.func.isRequired
+    update: PropTypes.func.isRequired,
+    remove: PropTypes.func
   };
 
   handleEdit = () => {
@@ -32,7 +33,7 @@ class Category extends Component {
   };
 
   render() {
-    const { category } = this.props;
+    const { category, remove } = this.props;
     const { editing } = this.state;
 
     return (
@@ -42,6 +43,7 @@ class Category extends Component {
             category={category}
             onComplete={this.handleComplete}
             onCancel={this.handleEndEdit}
+            remove={remove}
           />
           : <CategoryDisplay
             category={category}
@@ -55,5 +57,5 @@ class Category extends Component {
 
 export default connect(
   null,
-  { update }
+  { update, remove }
 )(Category);
