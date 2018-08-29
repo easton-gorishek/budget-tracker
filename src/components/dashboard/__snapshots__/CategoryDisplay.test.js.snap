@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`category display renders display, then edit 1`] = `
+<Fragment>
+  <p
+    className="categoryDisplay"
+  >
+    <strong>
+      name
+    </strong>
+    <br />
+    <strong>
+      $
+      budget
+    </strong>
+    <br />
+    <button
+      name="edit"
+      onClick={[MockFunction]}
+    >
+      Edit
+    </button>
+    <button
+      name="remove"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </p>
+  <Connect(Expenses) />
+</Fragment>
+`;

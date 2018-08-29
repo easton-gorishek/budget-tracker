@@ -5,7 +5,7 @@ import { remove } from './actions';
 import styles from './CategoryDisplay.css';
 import Expenses from '../expenses/Expenses';
 
-class CategoryDisplay extends Component {
+export class CategoryDisplay extends Component {
   
   static propTypes = {
     category: PropTypes.object.isRequired,
@@ -23,7 +23,7 @@ class CategoryDisplay extends Component {
           <strong>{category.name}</strong><br/>
           <strong>${category.budget}</strong><br/>
           <button name="edit" onClick={onEdit}>Edit</button>
-          <button name="delete" onClick={() => remove(category.id)}>Delete</button>
+          <button name="remove" onClick={() => remove(category.id)}>Delete</button>
         </p>
         <Expenses categoryId={category.id}/>
       </Fragment>
