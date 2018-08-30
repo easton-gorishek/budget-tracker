@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './ExpenseDisplay.css';
 
 class ExpenseDisplay extends Component {
 
@@ -12,9 +13,11 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit } = this.props;
 
     return (
-      <p>
-        {expense.name}&nbsp;- ${expense.price}<br/>
-        <button name="edit" onClick={onEdit}>Edit</button>
+      <p className={styles.expenseDisplay}>
+        <span>{expense.name}&nbsp;- ${expense.price}</span>
+        <button name="edit" onClick={onEdit}>
+          <i className="fas fa-pencil-alt"></i>
+        </button>
       </p>
     );
   }

@@ -1,0 +1,21 @@
+:local(.expenseDisplay) {
+  display: flex;
+  justify-content: left;
+  color: #14A76C;
+
+  button {
+    background: #272727;
+    border: none;
+    border-radius: 5px;
+    color: #14A76C;
+    margin-left: 10px;
+    font-size: 1em;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  button:hover {
+    background: #14A76C;
+    color: black;
+  }
+}

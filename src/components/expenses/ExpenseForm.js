@@ -64,11 +64,15 @@ class ExpenseForm extends Component {
           <input required name="price" value={price} onChange={this.handleChange}/>
         </label>
         <p>
-          <button type="submit">{id ? 'Update' : 'Add' }</button>
+          <button type="submit">{id ? <i className="fas fa-check"></i> : 'Add' }</button>
           {id && 
             <Fragment>
-              <button type="button" onClick={onCancel}>Cancel</button>
-              <button name="remove" onClick={this.onRemove}>Delete</button>
+              <button type="button" onClick={onCancel}>
+                <i className="fas fa-times"></i>
+              </button>
+              <button name="remove" onClick={this.onRemove}>
+                <i className="far fa-trash-alt"></i>
+              </button>
             </Fragment>
           }
         </p>

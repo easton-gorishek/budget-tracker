@@ -13,5 +13,12 @@
     border-radius: 5px;
     padding: .5em;
     margin-bottom: 0;
-  };
+  }
+
+  .inactive {
+    color: #FFE400;
+  }
+  .inactive:hover {
+    color: darkorchid;
+  }
 }

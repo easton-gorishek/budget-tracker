@@ -1,6 +1,23 @@
 :local(.dashboard) {
+  #addCategory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   h2 {
+    margin-top: 0;
     text-align: center;
     color: #FF652F; 
+  }
+  #addCategoryButton {
+    background: #272727;
+    color: #FF652F;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+  }
+  #addCategoryButton:hover {
+    background: #FF652F;
+    color: black;
   }
 }

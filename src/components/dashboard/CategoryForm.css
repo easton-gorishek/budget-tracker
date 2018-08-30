@@ -2,25 +2,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+  border: 1px solid #FF652F;
+  padding: 1em;
   
   input {
-    border: 1px solid #14A76C;
+    border: 1px solid #FF652F;
     border-radius: 5px;
+    background: #272727;
     font-size: 1em;
+    color: #FF652F;
+    margin: .25em 0 .25em 0;
   }
   button {
+    background: #272727;
+    border: none;
     border-radius: 5px;
-    font-size: .75em;
-    width: 10em;
-    margin-bottom: 1em;
+    color: #FF652F;
+    font-size: 1em;
+    margin: 0 10px 0 10px;
+    padding-top: .25em;
+    padding-bottom: .25em;
   }
   button:hover {
-    background: #FF3B3F;
+    background: #FF652F;
+    color: black;
   }
   p {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
   }
 
   label {

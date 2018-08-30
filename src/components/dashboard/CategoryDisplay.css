@@ -3,6 +3,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
   #categoryHeader {
     color: #14A76C;
     font-size: 1.5em;
@@ -16,7 +17,14 @@
     border-radius: 5px;
   }
 
+  button {
+    background: #272727;
+    border: none;
+    color: #14A76C;
+  }
+
   button:hover {
-    background: #8E8D8A;
+    background: #14A76C;
+    color: black;
   }
 }

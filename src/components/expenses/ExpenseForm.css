@@ -5,8 +5,7 @@
 
   p {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 
   label {
@@ -15,18 +14,24 @@
   }
   input {
     border: 1px solid #14A76C;
-    background: #747474;
+    background: #272727;
     border-radius: 5px;
+    color: #14A76C;
     font-size: .70em;
   }
   button {
+    background: #272727;
+    border: none;
     border-radius: 5px;
-    font-size: .75em;
-    width: 10em;
-    margin-bottom: 1em;
+    color: #14A76C;
+    font-size: 1em;
+    margin: 0 10px 0 10px;
+    padding-top: .25em;
+    padding-bottom: .25em;
   }
 
   button:hover {
-    background: #FF3B3F
+    background: #14A76C;
+    color: black;
   }
 }

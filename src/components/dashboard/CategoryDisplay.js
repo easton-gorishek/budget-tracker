@@ -15,7 +15,9 @@ class CategoryDisplay extends Component {
 
     return (
       <div className={styles.categoryDisplay}>
-        <button id="categoryEdit" name="edit" onClick={onEdit}>&#9998;</button>
+        <button id="categoryEdit" name="edit" onClick={onEdit}>
+          <i className="fas fa-pencil-alt"></i>
+        </button>
         <p id="categoryHeader">
           <strong>{category.name}</strong> |&nbsp; 
           <strong>${category.budget}</strong>

@@ -14,7 +14,8 @@ class CategoryForm extends Component {
     category: PropTypes.object,
     onComplete: PropTypes.func.isRequired,
     onCancel: PropTypes.func,
-    remove: PropTypes.func
+    remove: PropTypes.func,
+    onToggle: PropTypes.func
   };
 
   componentDidMount() {
@@ -36,6 +37,7 @@ class CategoryForm extends Component {
       .then(() => {
         if(!originalCategory) {
           this.setState({ name: '', budget: '' });
+          this.props.onToggle();
           document.activeElement.blur();
         }
       })
@@ -43,7 +45,7 @@ class CategoryForm extends Component {
         this.setState({ errors: err });
       });
 
-    this.setState({ name: '', budget: '', timestamp: '' });
+    // this.setState({ name: '', budget: '', timestamp: '' });
   };
 
   handleChange = ({ target }) => {
@@ -58,7 +60,7 @@ class CategoryForm extends Component {
 
   render() {
     const { id, name, budget } = this.state;
-    const { onCancel } = this.props;
+    const { onCancel, onToggle } = this.props;
 
     return (
       <form className={styles.categoryForm} onSubmit={this.handleSubmit}>
@@ -71,11 +73,22 @@ class CategoryForm extends Component {
           <input required name="budget" value={budget} onChange={this.handleChange}/>
         </label>
         <p>
-          <button type="submit">{id ? 'Update' : 'Add' }</button>
+          <button type="submit">
+            {id 
+              ? <i className="fas fa-check">
+              </i> 
+              : 'Add'
+            }
+          </button>
+          {!id && <button type="button" onClick={onToggle}><i className="fas fa-times"></i></button>}
           {id && 
             <Fragment>
-              <button type="button" onClick={onCancel}>Cancel</button>
-              <button name="remove" onClick={this.onRemove}>Delete</button>
+              <button type="button" onClick={onCancel}>
+                <i className="fas fa-times"></i>
+              </button>
+              <button name="remove" onClick={this.onRemove}>
+                <i className="far fa-trash-alt"></i>
+              </button>
             </Fragment>
           }
         </p>
