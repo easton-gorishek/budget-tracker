@@ -18,9 +18,10 @@
   }
 
   button {
-    background: #272727;
+    background: #242323;
     border: none;
     color: #14A76C;
+    cursor: pointer;
   }
 
   button:hover {

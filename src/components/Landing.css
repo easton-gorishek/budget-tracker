@@ -1,0 +1,5 @@
+:local(.landing) {
+  display: flex;
+  justify-content: center;
+  color: #14A76C;
+}

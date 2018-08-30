@@ -1,3 +1,6 @@
 :local(.expenses) {
-  padding-left: 0;
+  padding: 3px 0 3px 0;
+  border-top: thin solid #747474;
+  border-bottom: thin solid #747474;
+  margin-bottom: 1em;
 }

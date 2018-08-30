@@ -1,10 +1,23 @@
 :local(.expenseDisplay) {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   color: #14A76C;
+  
+  #section:hover {
+    background-color: #14A76C;
+    border-radius: 5px;
+    color: black;
+    padding: .25em;
+    cursor: pointer;
+  }
+
+  p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 
   button {
-    background: #272727;
+    background: #242323;
     border: none;
     border-radius: 5px;
     color: #14A76C;
@@ -12,10 +25,6 @@
     font-size: 1em;
     padding-top: 3px;
     padding-bottom: 3px;
-  }
-
-  button:hover {
-    background: #14A76C;
-    color: black;
+    cursor: pointer;
   }
 }

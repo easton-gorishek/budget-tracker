@@ -26,10 +26,14 @@ class Expense extends Component {
     this.setState({ editing: false });
   };
 
+  handleToggle = () => {
+    this.setState(({ editing }) => ({ editing: !editing }));
+  };
+
   handleComplete = (expense) => {
     const { update } = this.props;
     update(expense);
-    this.handleEndEdit();
+    this.handleToggle();
   };
 
   render() {
@@ -42,15 +46,14 @@ class Expense extends Component {
           ? <ExpenseForm
             expense={expense}
             onComplete={this.handleComplete}
-            onCancel={this.handleEndEdit}
+            onCancel={this.handleToggle}
             remove={remove}
           />
           : <ExpenseDisplay
             expense={expense}
-            onEdit={this.handleEdit}
+            onEdit={this.handleToggle}
           />
-        }
-       
+        } 
       </li>
     );
   }

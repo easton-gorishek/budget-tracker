@@ -15,6 +15,7 @@
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
+    cursor: pointer;  
   }
   #addCategoryButton:hover {
     background: #FF652F;

@@ -1,4 +1,5 @@
 :local(.expense) {
   list-style: none;
   text-align: center;
+  width: 150px;
 }

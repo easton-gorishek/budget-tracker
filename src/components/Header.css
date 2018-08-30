@@ -17,8 +17,12 @@
 
   .inactive {
     color: #FFE400;
+    text-decoration: none;
   }
   .inactive:hover {
     color: darkorchid;
+  }
+  .active {
+    text-decoration: none;
   }
 }

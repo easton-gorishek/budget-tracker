@@ -20,7 +20,7 @@
     font-size: .70em;
   }
   button {
-    background: #272727;
+    background: #242323;
     border: none;
     border-radius: 5px;
     color: #14A76C;
@@ -28,6 +28,7 @@
     margin: 0 10px 0 10px;
     padding-top: .25em;
     padding-bottom: .25em;
+    cursor: pointer;
   }
 
   button:hover {
