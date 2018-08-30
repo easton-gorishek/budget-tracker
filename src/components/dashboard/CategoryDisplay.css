@@ -4,9 +4,11 @@
   flex-direction: column;
   align-items: center;
   #categoryHeader {
-    color: #E85A4F;
+    color: #14A76C;
     font-size: 1.5em;
-    border-bottom: thin solid #8E8D8A;
+    border: thin solid #14A76C;
+    border-radius: 5px;
+    padding: .25em;
   }
   #categoryEdit {
     align-self: flex-end;

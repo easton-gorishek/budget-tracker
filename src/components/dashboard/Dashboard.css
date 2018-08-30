@@ -1,5 +1,6 @@
 :local(.dashboard) {
   h2 {
     text-align: center;
+    color: #FF652F; 
   }
 }

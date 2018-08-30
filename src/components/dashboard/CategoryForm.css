@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   input {
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 1px solid #14A76C;
+    border-radius: 5px;
     font-size: 1em;
   }
   button {
@@ -14,11 +15,15 @@
     margin-bottom: 1em;
   }
   button:hover {
-    background: #8E8D8A;
+    background: #FF3B3F;
   }
   p {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  label {
+    color: #FF652F;
   }
 }

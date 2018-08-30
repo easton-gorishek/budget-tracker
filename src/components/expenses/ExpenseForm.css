@@ -10,12 +10,13 @@
   }
 
   label {
-    color: #E85A4F;
+    color: #14A76C;
     font-size: 1.25em;
   }
   input {
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 1px solid #14A76C;
+    background: #747474;
+    border-radius: 5px;
     font-size: .70em;
   }
   button {
@@ -26,6 +27,6 @@
   }
 
   button:hover {
-    background: #8E8D8A
+    background: #FF3B3F
   }
 }
