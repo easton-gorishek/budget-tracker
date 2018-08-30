@@ -3,4 +3,12 @@
   border-top: thin solid #747474;
   border-bottom: thin solid #747474;
   margin-bottom: 1em;
+
+  p {
+    color: #14A76C;
+    display: flex;
+    justify-content: space-between;
+    margin: .5em;
+    font-size: .85em;
+  }
 }

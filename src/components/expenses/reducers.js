@@ -5,6 +5,9 @@ import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE } from '../dashboard/reduc
 
 export const getExpenses = (state) => state.expensesByCategory; 
 export const getExpensesByCategoryId = (state, id) => getExpenses(state)[id];
+export const getTotalExpenses = (state, id) => getExpensesByCategoryId(state, id)
+  .map(expenses => parseInt(expenses.price))
+  .reduce((acc, cur) => acc + cur, 0);
 
 export function expensesByCategory(state = [], { type, payload }) {
   switch(type) {

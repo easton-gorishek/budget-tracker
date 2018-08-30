@@ -3,17 +3,17 @@
   justify-content: space-between;
   color: #14A76C;
   
+  #section, #amount {
+    background-color: #242323;
+    padding: 5px;
+    margin: 0;
+  }
+ 
   #section:hover {
     background-color: #14A76C;
     border-radius: 5px;
     color: black;
-    padding: .25em;
     cursor: pointer;
-  }
-
-  p {
-    margin-top: 2px;
-    margin-bottom: 2px;
   }
 
   button {

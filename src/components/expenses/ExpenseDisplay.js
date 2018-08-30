@@ -14,7 +14,8 @@ class ExpenseDisplay extends Component {
 
     return (
       <section className={styles.expenseDisplay}>
-        <p id="section"  onClick={onEdit}>{expense.name}</p><p>${expense.price}</p>
+        <p id="section"  onClick={onEdit}>{expense.name}</p>
+        <p id="amount">${expense.price}</p>
       </section>
     );
   }

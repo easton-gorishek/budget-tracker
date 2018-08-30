@@ -25,4 +25,8 @@
   .active {
     text-decoration: none;
   }
+
+  span {
+    color: #FFE400;
+  }
 }
