@@ -52,15 +52,14 @@ class ExpenseForm extends Component {
     const { name, price, id } = this.state;
     const { onCancel } = this.props;
 
-
     return (
       <form className={styles.expenseForm} onSubmit={this.handleSubmit}>
         <label>
-        Expense:&nbsp;<br/>
+        Expense:<br/>
           <input required name="name" value={name} onChange={this.handleChange}/>
         </label>
         <label>
-        Amount:&nbsp;<br/>
+        Amount:<br/>
           <input required name="price" value={price} onChange={this.handleChange}/>
         </label>
         <p>
