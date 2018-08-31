@@ -77,7 +77,7 @@ class CategoryForm extends Component {
             {id 
               ? <i className="fas fa-check">
               </i> 
-              : 'Add'
+              : <i className="fas fa-check"></i>
             }
           </button>
           {!id && <button type="button" onClick={onToggle}><i className="fas fa-times"></i></button>}
