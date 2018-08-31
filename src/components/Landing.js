@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import styles from './Landing.css';
 
 class Landing extends Component {
 
   render() {
 
     return (
-      <h2>Welcome to my app.</h2>
+      <h2 className={styles.landing}>Welcome to Budget Tracker.</h2>
     );
   }
 }

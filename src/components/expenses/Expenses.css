@@ -1,0 +1,19 @@
+:local(.expenses) {
+  padding: 3px 0 3px 0;
+  border-top: thin solid #747474;
+  border-bottom: thin solid #747474;
+  margin-bottom: 1em;
+  width: 90%;
+
+  p {
+    color: #14A76C;
+    display: flex;
+    justify-content: space-between;
+    margin: .5em;
+    font-size: .85em;
+  }
+
+  #total {
+    padding: 3px;
+  }
+}

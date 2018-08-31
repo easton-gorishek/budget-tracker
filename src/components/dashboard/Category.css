@@ -1,7 +1,9 @@
 :local(.category) {
-  background-color: rgba(0, 0, 0, .25);
+  border-style: solid;
+  border-width: thin;
+  border-color: #14A76C;
   border-radius: 10px;
-  box-shadow: 3px 5px rgba(0, 0, 0, .75);
+  background:#242323;
   margin: 10px;
   padding: 10px;
 }

@@ -1,0 +1,17 @@
+:local(.expenseDisplay) {
+  display: flex;
+  justify-content: space-between;
+  color: #14A76C;
+ 
+  #section, #amount {
+    background-color: #242323;
+    padding: 3px;
+  }
+ 
+  #section:hover {
+    background-color: #14A76C;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+  }
+}

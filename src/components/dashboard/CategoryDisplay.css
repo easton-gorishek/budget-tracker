@@ -1,3 +1,31 @@
 :local(.categoryDisplay) {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  #categoryHeader {
+    color: #14A76C;
+    font-size: 1.5em;
+    border: thin solid #14A76C;
+    border-radius: 5px;
+    padding: .25em;
+  }
+  #categoryEdit {
+    align-self: flex-end;
+    font-size: 1.25em;
+    border-radius: 5px;
+  }
+
+  button {
+    background: #242323;
+    border: none;
+    color: #14A76C;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #14A76C;
+    color: black;
+  }
 }

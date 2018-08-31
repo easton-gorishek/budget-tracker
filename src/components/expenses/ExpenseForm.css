@@ -1,41 +1,39 @@
-:local(.categoryForm) {
+:local(.expenseForm) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 5px;
-  /* border: 1px solid #FF652F; */
-  padding: 1em;
-  
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    color: #14A76C;
+    text-align: left;
+  }
   input {
-    border: 1px solid #FF652F;
-    border-radius: 5px;
+    border: 1px solid #14A76C;
     background: #272727;
+    border-radius: 5px;
+    color: #14A76C;
     font-size: 1em;
-    color: #FF652F;
     margin: .25em 0 .25em 0;
   }
   button {
-    background: #272727;
+    background: #242323;
     border: none;
     border-radius: 5px;
-    color: #FF652F;
+    color: #14A76C;
     font-size: 1em;
     margin: 0 10px 0 10px;
     padding-top: .25em;
     padding-bottom: .25em;
     cursor: pointer;
   }
-  button:hover {
-    background: #FF652F;
-    color: black;
-  }
-  p {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-  }
 
-  label {
-    color: #FF652F;
+  button:hover {
+    background: #14A76C;
+    color: black;
   }
 }

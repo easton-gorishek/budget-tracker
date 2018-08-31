@@ -2,5 +2,31 @@
   display: flex;
   flex-direction: column;
   align-items: center; 
-  border-bottom: solid;
+  ul {
+    padding: 0px;
+    list-style: none;
+  }
+  h1 {
+    color: #FFE400;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    padding: .5em;
+    margin-bottom: 0;
+  }
+
+  .inactive {
+    color: #FFE400;
+    text-decoration: none;
+  }
+  .inactive:hover {
+    color: darkorchid;
+  }
+  .active {
+    text-decoration: none;
+  }
+
+  span {
+    color: #FFE400;
+  }
 }

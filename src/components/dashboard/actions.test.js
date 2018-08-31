@@ -1,44 +1,68 @@
+jest.mock('../../services/budgetApi', () => ({
+  loadCategories: jest.fn(),
+  addCategory: jest.fn(),
+  removeCategory: jest.fn(),
+  updateCategory: jest.fn()
+}));
+
 import { load, add, update, remove } from './actions';
-import data from '../../services/categories-data';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
+import { loadCategories, addCategory, removeCategory, updateCategory } from '../../services/budgetApi';
+import { 
+  CATEGORY_LOAD, 
+  CATEGORY_ADD, 
+  CATEGORY_UPDATE, 
+  CATEGORY_REMOVE } 
+  from './reducers';
 
 describe('Budget actions', () => {
 
   it('Loads budget categories', () => {
-    const action = load();
-    expect(action).toEqual({ type: CATEGORY_LOAD, payload: data });
+    const promise = Promise.resolve();
+    loadCategories.mockReturnValueOnce(promise);
+
+    const { type, payload } = load();
+    expect(type).toBe(CATEGORY_LOAD);
+    expect(payload).toBe(promise);
+    expect(loadCategories.mock.calls.length).toBe(1);
   });
 
-  it('Adds a category', () => {
-    const newCategory = {
-      name: 'coffee',
-      budget: 300
-    };
-    const action = add(newCategory);
-    delete action.payload.id;
-    delete action.payload.timestamp;
-    expect(action).toEqual({ type: CATEGORY_ADD, payload: newCategory });
+  it('add a category', () => {
+    const category = { name: 'coffee' };
+    const promise = Promise.resolve();
+    addCategory.mockReturnValueOnce(promise);
+
+    const { type, payload } = add(category);
+    expect(type).toBe(CATEGORY_ADD);
+    expect(payload).toBe(promise);
+    expect(addCategory.mock.calls.length).toBe(1);
+    expect(addCategory.mock.calls[0][0]).toBe(category);
   });
 
-  it('Updates a category', () => {
-    const category = {
-      id: 'abc',
-      name: 'bar',
-      budget: 100
-    };
-    const action = update(category);
-    expect(action).toEqual({ type: CATEGORY_UPDATE, payload: category });
+  it('removes a category', () => {
+    const promise = Promise.resolve();
+    removeCategory.mockReturnValueOnce(promise);
+    const id = 123;
 
+    const { type, payload } = remove(id);
+    expect(type).toBe(CATEGORY_REMOVE);
+    expect(removeCategory.mock.calls.length).toBe(1);
+    expect(removeCategory.mock.calls[0][0]).toBe(id);
+
+    return payload.then(idToDelete => {
+      expect(idToDelete).toBe(id);
+    });
   });
 
-  it('Removes a category', () => {
-    const category = {
-      id: 'abc',
-      name: 'bar',
-      budget: 100
-    };
-    const action = remove(category);
-    expect(action).toEqual({ type: CATEGORY_REMOVE, payload: category });
-  });
+  it('updates a category', () => {
+    const category = { name: 'bar' };
+    const promise = Promise.resolve();
+    updateCategory.mockReturnValueOnce(promise);
 
+    const { type, payload } = update(category);
+    expect(type).toBe(CATEGORY_UPDATE);
+    expect(payload).toBe(promise);
+    expect(updateCategory.mock.calls.length).toBe(1);
+    expect(updateCategory.mock.calls[0][0]).toBe(category);
+
+  });
 });
