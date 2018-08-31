@@ -9,7 +9,9 @@ exports[`category display renders display, then edit 1`] = `
     name="edit"
     onClick={[MockFunction]}
   >
-    ✎
+    <i
+      className="fas fa-pencil-alt"
+    />
   </button>
   <p
     id="categoryHeader"
