@@ -29,7 +29,7 @@ class Expenses extends Component {
             />
           ))}
           <p>
-            <span><strong>TOTAL</strong></span>
+            <span id="total"><strong>TOTAL</strong></span>
             <span><strong>${totalExpenses}</strong></span>
           </p>
         </ul>

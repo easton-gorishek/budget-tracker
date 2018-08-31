@@ -13,10 +13,10 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit } = this.props;
 
     return (
-      <section className={styles.expenseDisplay}>
-        <p id="section"  onClick={onEdit}>{expense.name}</p>
-        <p id="amount">${expense.price}</p>
-      </section>
+      <p id="expense" className={styles.expenseDisplay}>
+        <span id="section"  onClick={onEdit}>{expense.name}</span>
+        <span id="amount">${expense.price}</span>
+      </p>
     );
   }
 }

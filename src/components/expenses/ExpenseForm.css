@@ -1,6 +1,7 @@
 :local(.expenseForm) {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   p {
     display: flex;

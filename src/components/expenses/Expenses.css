@@ -3,6 +3,7 @@
   border-top: thin solid #747474;
   border-bottom: thin solid #747474;
   margin-bottom: 1em;
+  width: 90%;
 
   p {
     color: #14A76C;
@@ -10,5 +11,9 @@
     justify-content: space-between;
     margin: .5em;
     font-size: .85em;
+  }
+
+  #total {
+    padding: 3px;
   }
 }
