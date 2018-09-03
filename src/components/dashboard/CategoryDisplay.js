@@ -19,8 +19,8 @@ class CategoryDisplay extends Component {
           <i className="fas fa-pencil-alt"></i>
         </button>
         <p id="categoryHeader">
-          <strong>{category.name}</strong> |&nbsp; 
-          <strong>${category.budget}</strong>
+          <strong className="categoryHeader">{category.name}</strong> |&nbsp; 
+          <strong className="categoryHeader">${category.budget}</strong>
         </p>
         <Expenses categoryId={category.id}/>
       </div>
