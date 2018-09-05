@@ -16,11 +16,15 @@ exports[`category display renders display, then edit 1`] = `
   <p
     id="categoryHeader"
   >
-    <strong>
+    <strong
+      className="categoryHeader"
+    >
       name
     </strong>
      | 
-    <strong>
+    <strong
+      className="categoryHeader"
+    >
       $
       budget
     </strong>
