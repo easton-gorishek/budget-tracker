@@ -11,6 +11,7 @@
     border-radius: 5px;
     padding: .25em;
   }
+
   #categoryEdit {
     align-self: flex-end;
     font-size: 1.25em;
@@ -27,5 +28,9 @@
   button:hover {
     background: #14A76C;
     color: black;
+  }
+
+  .categoryHeader {
+    font-size: .8em;
   }
 }
