@@ -1,7 +1,11 @@
 :local(.categories) {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   list-style: none;
+  padding-left: 0; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-left: 0;
 
 }
